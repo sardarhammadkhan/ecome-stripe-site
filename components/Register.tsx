@@ -29,7 +29,7 @@ const Register = () => {
           'Content-Type': 'application/json',
         }
       };
-      const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/register', registeData,config);
+      const res = await axios.post('https://different-moccasins-crow.cyclic.app/register', registeData,config);
       const token = res.data.token;
       localStorage.setItem('jwtToken', token);
       route.push('/Login')

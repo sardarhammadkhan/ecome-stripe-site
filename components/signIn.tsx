@@ -29,7 +29,7 @@ const handelSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
         'Content-Type': 'application/json',
       }
     };
-    const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/login', formData,config);
+    const res = await axios.post('https://different-moccasins-crow.cyclic.app/login', formData,config);
     const token = res.data.token;
     localStorage.setItem('jwtToken', token);
     route.push('/StripeChk')
