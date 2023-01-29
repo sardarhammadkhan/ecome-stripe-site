@@ -24,7 +24,12 @@ const Register = () => {
   const handleSubmit = async(e:any)=>{
     e.preventDefault()
     try {
-      const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/register', registeData);
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      };
+      const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/register', registeData,config);
       const token = res.data.token;
       localStorage.setItem('jwtToken', token);
       route.push('/Login')
