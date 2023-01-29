@@ -12,7 +12,7 @@ useEffect(() => {
      
       try {
         let lineItems:any=[]
-        data.forEach((item) => {
+        data.forEach((item: { id: any; quantity: any; }) => {
           lineItems.push({
             price: item.id,
             quantity: item.quantity,
