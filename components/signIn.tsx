@@ -24,7 +24,12 @@ const handelSubmit=async(e: React.FormEvent<HTMLFormElement>)=>{
 };
   e.preventDefault()
   try {
-    const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/login', formData,{headers:headers});
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    };
+    const res = await axios.post('https://dancing-marzipan-19b460.netlify.app/login', formData,config);
     const token = res.data.token;
     localStorage.setItem('jwtToken', token);
     route.push('/StripeChk')
