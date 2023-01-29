@@ -13,7 +13,9 @@ app.use(express.static("../pages"));
 app.use(bodyParser.urlencoded({ extended: true }));
 const secret ='my-secret-key'
 let users=[]
-
+app.get('/',async(req,res)=>{
+  res.send('hhhh')
+})
 app.post('/register',async(req,res)=>{
   try{  const { firstname, lastname, email, password } = req.body;
   const existUser = users.find((user)=>user.email==email);
